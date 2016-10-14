@@ -2,9 +2,10 @@
 <config>
     <modules>
         <Bugsnag_Notifier>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </Bugsnag_Notifier>
     </modules>
+
     <global>
         <models>
             <Bugsnag_Notifier>
@@ -23,15 +24,13 @@
             </controller_action_predispatch>
         </events>
 
-        <!-- override default magento Zend Log Writer so all log messages end up in BugSnag -->
-        <!-- remove this node to reenable default magento logging -->
         <log>
             <core>
                 <writer_model>Bugsnag_Notifier_Log_Writer_Stream</writer_model>
             </core>
         </log>
-        <!-- // -->
     </global>
+
     <admin>
         <routers>
             <adminhtml>
